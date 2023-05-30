@@ -23,6 +23,8 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/product', productRoutes);
 
-app.listen(process.env.PORT, () => {
-    console.log(`server is running on ${process.env.DEV_MODE} mode on port ${process.env.PORT}`.bgCyan.white);
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log(`server is running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan.white);
 })

@@ -70,6 +70,7 @@ const createProductController = async (req, res) => {
 // get all products
 
 const getProductController = async (req, res) => {
+    console.log('i am here and listening all products');
     try {
         const products = await Product.find({}).populate('category').select({ photo: 0 }).limit(12).sort({ createdAt: -1 });
         res.status(200).send({

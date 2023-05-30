@@ -23,6 +23,10 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/product', productRoutes);
 
+app.get('/', (req, res) => {
+    res.send({ message: 'I am default page' })
+})
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
